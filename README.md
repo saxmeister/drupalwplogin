@@ -7,4 +7,6 @@ No additional coding, CSS, or supporting files are necessary to make this work. 
 
 In the future, I may turn this into a simple module, but this works as a simple drop-in for those who want something super easy.
 
+The included image (wpstyle-drupal-login.png) is here for visual reference.
+
 -Saxmeister
