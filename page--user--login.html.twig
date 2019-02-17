@@ -1,0 +1,157 @@
+<style type="text/css">
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.main {
+  display: table;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  margin: 0 auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  background-color: #f1f1f1;
+}
+
+.main-login-container {
+   display: table-cell;
+   text-align: center;
+   vertical-align: middle;
+   position: relative;
+}
+
+.main-login {
+  width: 500px;
+  margin: auto;
+}
+
+.login-logo {
+  text-align: center;
+  width: 100%;
+  display: block;
+  margin-bottom: 32px;
+}
+
+.login-logo .logo-drip {
+  height: 100px;
+  display: block;
+  -moz-filter: invert(40%);
+  -webkit-filter: invert(40%);
+  filter: invert(40%);
+  margin: 0 auto;
+}
+
+.login-logo .logo-drip:hover {
+  -moz-filter: invert(80%);
+  -webkit-filter: invert(80%);
+  filter: invert(80%);
+}
+
+.user-login-form {
+  background-color: #ffffff;
+  box-shadow: 0 0 5px rgba(200,200,200,0.5);
+  padding: 48px;
+  text-align: left;
+}
+
+.user-login-form label {
+  color: #787878;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.user-login-form .description {
+  font-size: 12px;
+  color: #aaaaaa;
+  margin-bottom: 16px;
+  margin-top: 4px;
+}
+
+.user-login-form input[type="text"],
+.user-login-form input[type="password"] {
+  border: 2px solid #dddddd;
+  padding: 12px;
+  max-width: 100%;
+  font-size: 18px;
+  margin: 2px 6px 0 0;
+  box-sizing: border-box;
+}
+
+.user-login-form input.button {
+  text-align: center;
+  padding: 12px 24px;
+  color: #ffffff;
+  font-weight: bold;
+  background-color: #00a0d2;
+  border: 1px solid #0073aa;
+  border-radius: 4px;
+  vertical-align: baseline;
+  float: right;
+}
+
+.user-login-form input.button:hover {
+  background-color: #008ec2;
+}
+
+.user-login-form:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.login-options li {
+  font-size: 14px;
+  list-style: none;
+  display: inline-block;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  text-align: center;
+  padding: 0 6px;
+  border-right: 1px solid #000000;
+}
+
+.login-options li:first-child {
+  padding-left: 0;
+}
+
+.login-options li:last-child {
+  border-right: none;
+  padding-right: 0;
+}
+
+.login-options a {
+  color: #787878;
+}
+</style>
+
+<div class="main">
+  <div class="main-login-container">
+
+    <div class="main-login">
+      <a id="main-content" tabindex="-1"></a>
+
+      <div class="login-logo">
+        <a href="{{ url('<front>') }}"><img src="https://www.drupal.org/files/cta/graphic/logo-drupal8.svg" class="logo-drip"></a>
+      </div>
+
+      <!--Page.Content-->
+      {{ page.content }}
+
+      <div id="auth_box" class="login-options">
+        <ul id="bottom_part">
+          <li class="register_link"><a href="{{ path('user.register') }}">{{ 'Register'|t }}</a></li>
+          <li class="password_link"><a href="{{ path('user.pass') }}">{{ 'Lost your password?'|t }}</a></li>
+          <li class="back_link"><a href="{{ url('<front>') }}">{{ 'Back to the site'|t }}</a></li>
+        </ul>
+      </div><!--/#auth_box-->
+
+    </div><!--/.main-login-->
+  </div><!--/.main-login-container-->
+</div><!--/.main-->
